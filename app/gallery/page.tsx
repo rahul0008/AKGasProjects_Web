@@ -4,40 +4,47 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, X } from 'lucide-react';
 
+import highPressure from '../images/a_high-pressure_specialty_.png';
+import lpgTank from '../images/an_LPG_tank_installation_a.png';
+import gasManifold from '../images/gas_cylinder_manifold_sy.png';
+import gasLeak from '../images/gas_leak_detec.png';
+import pngPipe from '../images/a_PNG_(Piped_Natural_Gas).png';
+import industrialGasPipe from '../images/industrial_gas_pipeline_system_with.png';
+
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=2070',
+    src: highPressure,
     title: 'Industrial Gas Installation',
     category: 'Installation',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=2070',
+    src: gasManifold,
     title: 'High Pressure Gas Manifold',
     category: 'Manifold',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070',
+    src: pngPipe,
     title: 'PNG Pipeline Setup',
     category: 'Pipeline',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581092160562-46d825775edd?q=80&w=2070',
+    src: lpgTank,
     title: 'LPG Tank Installation',
     category: 'Installation',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581092161734-7ef55295d5b0?q=80&w=2070',
+    src: gasLeak,
     title: 'Gas Leak Detection System',
     category: 'Safety',
   },
   {
-    src: 'https://images.unsplash.com/photo-1581092192574-40187da6ef91?q=80&w=2070',
+    src: industrialGasPipe,
     title: 'Industrial Piping Project',
     category: 'Pipeline',
   },
 ];
 
-const categories = ['All', ...new Set(galleryImages.map(img => img.category))];
+const categories = ['All', ...Array.from(new Set(galleryImages.map(img => img.category)))];
 
 export default function GalleryPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -73,9 +80,7 @@ export default function GalleryPage() {
         </div>
         <div className="container mx-auto px-4 relative z-10 text-white">
           <h1 className="text-5xl font-bold mb-6">Project Gallery</h1>
-          <p className="text-xl">
-            Explore our completed projects and installations
-          </p>
+          <p className="text-xl">Explore our completed projects and installations</p>
         </div>
       </section>
 
